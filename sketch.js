@@ -1,6 +1,3 @@
-var serial;          // variable to hold an instance of the serialport library
-var portName = '/dev/tty.usbmodem142201';
-
 let video;
 let poseNet;
 let pose;
@@ -29,10 +26,6 @@ function setup() {
     weights: 'model2/model.weights.bin',
   };
   brain.load(modelInfo, brainLoaded);
-
-  serial = new p5.SerialPort();    // make a new instance of the serialport library
-  serial.on('error', serialError); // callback for errors
-  serial.open(portName);
 }
 
 function brainLoaded() {
@@ -60,7 +53,6 @@ function gotResult(error, results) {
   if (results[0].confidence > 0.75) {
     console.log(results[0].label);
     poseLabel = results[0].label;
-    serial.write(poseLabel);
   }
   //console.log(results[0].confidence);
   classifyPose();
@@ -109,8 +101,4 @@ function draw() {
   textSize(70);
   textAlign(CENTER, CENTER);
   text(poseLabel, width / 2, height / 2);
-}
-
-function serialError(err) {
-  println('Something went wrong with the serial port. ' + err);
 }
