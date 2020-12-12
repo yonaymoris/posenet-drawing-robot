@@ -5,3 +5,27 @@ html, body {
 canvas {
   display: block;
 }
+#posemenu {
+  width: 100vh;
+  height: 100vh;
+  margin-left: 10px;
+  float:left;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 20px;
+}
+.pose {
+ display: inline-block;
+ width: 20%;
+ height:25%;
+ margin-left: 22px;
+ margin-top: 20px;
+ margin-bottom:20px;
+}
+.image {
+  height: 100%;
+  width:100%
+}
+.line {
+  height: 7px;
+  width: 108%;
+}

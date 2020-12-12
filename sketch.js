@@ -55,7 +55,7 @@ function portClose() {
   console.log('The serial port closed.');
 }
 function setup() {
-  createCanvas(640, 480);
+  createCanvas(window.screen.width, window.screen.height);
   serial = new p5.SerialPort();    // make a new instance of the serialport library
   serial.on('list', printList);  // set a callback function for the serialport list event
   serial.on('connected', serverConnected); // callback for connecting to the server
@@ -70,7 +70,10 @@ function setup() {
   video.hide();
   poseNet = ml5.poseNet(video, modelLoaded);
   poseNet.on('pose', gotPoses);
-
+  for(let i=0;i<poseMeta.length;i++) {
+    drawPoseCat(poseMeta[i]);
+  }
+  drawPose();
   let options = {
     inputs: 34,
     outputs: 4,
@@ -131,11 +134,10 @@ function modelLoaded() {
 
 function draw() {
   push();
-  translate(video.width, 0);
+  translate(window.screen.width - window.screen.width/4 , 0);
   scale(-1, 1);
   image(video, 0, 0, video.width, video.height);
-
-  if (pose) {
+  /*if (pose) {
     for (let i = 0; i < skeleton.length; i++) {
       let a = skeleton[i][0];
       let b = skeleton[i][1];
@@ -145,21 +147,51 @@ function draw() {
       line(a.position.x, a.position.y, b.position.x, b.position.y);
     }
     for (let i = 0; i < pose.keypoints.length; i++) {
-      let x = pose.keypoints[i].position.x;
-      let y = pose.keypoints[i].position.y;
-      fill(0);
-      stroke(255);
-      ellipse(x, y, 16, 16);
+      if(pose.keypoints[i].position.y+10 < video.height) {
+        let x = pose.keypoints[i].position.x;
+        let y = pose.keypoints[i].position.y;
+        fill(0);
+        stroke(255);
+        ellipse(x, y, 16, 16);
+      }
     }
-  }
+  }*/
   pop();
 
   fill(255, 0, 255);
-  noStroke();
-  textSize(70);
-  textAlign(CENTER, CENTER);
+  //noStroke();
+  //textSize(70);
+  //textAlign(CENTER, CENTER);
   if(poseMapping[poseLabel]) {
     serial.write(poseMapping[poseLabel]);
   }
-  text(poseLabel, width / 2, height / 2);
+  //text(poseLabel, width / 2, height / 2);
+}
+function drawPoseCat(meta) {
+    console.log('MEE',meta,meta.poses)
+  
+  var element = document.createElement("div");
+  element.appendChild(document.createTextNode(meta.category));
+  for(let i=0;i<meta.poses.length;i++) {
+    drawPose(meta.poses[i]);
+  }
+}
+function drawPose(meta) {
+if(meta) {
+  var element = document.createElement("div");
+  element.className = "pose";
+
+  element.appendChild(document.createTextNode(meta.name));
+  //add image
+  var img = document.createElement('img'); 
+  img.src =  meta.image; 
+img.className = 'image';
+  element.appendChild(img);
+
+  var line = document.createElement("div");
+  line.className = "line";
+  line.style.backgroundColor = meta.colour;
+  //element.appendChild(line);
+  document.getElementById('posemenu').appendChild(element);
+}
 }
