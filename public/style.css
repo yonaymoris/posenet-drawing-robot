@@ -1,0 +1,42 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+}
+#posemenu {
+  width: 195vh;
+  height: 35vh;
+  float:left;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 20px;
+}
+.posecategory {
+  display: inline-block;
+  height: 100%;
+  margin-right: 5px;
+}
+.justinline {
+  display: inline-block;
+  height: 100%;
+}
+.pose {
+ display: inline-block;
+ width: 19vh;
+ height:100%;
+ margin-left: 0px;
+ margin-top: 20px;
+ margin-bottom:20px;
+}
+.image {
+  height: 100%;
+  width:100%
+}
+.line {
+  height: 7px;
+  width: 108%;
+}
+.videoelement {
+  display: inline-block;
+}
