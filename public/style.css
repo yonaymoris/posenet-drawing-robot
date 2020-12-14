@@ -11,16 +11,20 @@ canvas {
   float:left;
   background-color: rgb(255, 255, 255);
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 .posecategory {
   display: inline-block;
   height: 100%;
   margin-right: 5px;
   font-family: 'Bungee', cursive;
+  font-size: 16px;
+  font-weight: bold;
 }
 .justinline {
   display: inline-block;
   height: 100%;
+  margin-top: -15px;
 }
 .pose {
  display: inline-block;
@@ -40,4 +44,6 @@ canvas {
 }
 .videoelement {
   display: inline-block;
+  margin-top: 5px;
+  margin-left: 35px;
 }

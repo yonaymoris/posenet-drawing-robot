@@ -66,8 +66,8 @@ function portClose() {
   console.log('The serial port closed.');
 }
 function setup() {
-  canvas = createCanvas(window.screen.width, window.screen.height);
-  canvas.position(window.screen.width /2,window.screen.height*3/10+12)
+  canvas = createCanvas(window.screen.width, window.screen.height- window.screen.height*33/100);
+  canvas.position(window.screen.width /2 + 35,window.screen.height*33/100+10)
   serial = new p5.SerialPort();    // make a new instance of the serialport library
   serial.on('list', printList);  // set a callback function for the serialport list event
   serial.on('connected', serverConnected); // callback for connecting to the server

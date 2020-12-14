@@ -1,6 +1,6 @@
 var poseMeta= [
 {
-  category: 'Straight Line',
+  category: 'Draw straight Line',
   colour:'lala',
   poses: [
   {
@@ -15,7 +15,7 @@ var poseMeta= [
   
   
   {
-    category: 'Draw curve',
+    category: 'Draw curves',
     colour:'lala',
     poses: [
     {
@@ -47,7 +47,7 @@ var poseMeta= [
   
   
     {
-        category: 'Draw curve',
+        category: 'Redraw',
         colour:'lala',
         poses: [
         {
