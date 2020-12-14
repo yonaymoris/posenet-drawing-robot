@@ -16,6 +16,7 @@ canvas {
   display: inline-block;
   height: 100%;
   margin-right: 5px;
+  font-family: 'Bungee', cursive;
 }
 .justinline {
   display: inline-block;
