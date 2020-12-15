@@ -1,63 +1,71 @@
 var poseMeta= [
 {
-  category: 'Draw straight Line',
-  colour:'lala',
+  category: 'Straight Line',
   poses: [
   {
     name:'Straight Line right',
     image:'poses/moveright.png',
-    colour:'#148c76'
+    id:'moveRight'
   }, {
     name:'Straight Line right',
     image:'poses/moveleft.png',
-    colour:'#148c76'
+    id:'moveLeft'
   }]}, 
   
   
   {
-    category: 'Draw curves',
-    colour:'lala',
+    category: 'Curves short',
     poses: [
     {
       name:'Straight Line right',
       image:'poses/drawshortright.png',
-      colour:'#148c76'
+      id:'drawShortRight'
     }, {
       name:'Straight Line right',
       image:'poses/drawshortleft.png',
-      colour:'#148c76'
-    }, {
+      id:'drawShortLeft'
+    }]
+    },
+    {
+      category: 'Curves long',
+      poses: [
+      {
         name:'Straight Line right',
         image:'poses/drawlongright.png',
-        colour:'#148c76'
+        id:'drawLongRight'
       }, {
         name:'Straight Line right',
         image:'poses/drawlongleft.png',
-        colour:'#148c76'
-      }, {
+        id:'drawLongLeft',
+        r: 253,
+        g: 13,
+        b: 0
+      }]
+    },
+    {
+      category: 'Curves both',
+      poses: [
+      {
         name:'Straight Line right',
         image:'poses/drawbothright.png',
-        colour:'#148c76'
+        id:'drawBothLeft'
       }, {
         name:'Straight Line right',
         image:'poses/drawbothleft.png',
-        colour:'#148c76'
+        id:'drawBothRight'
       }]
     },
-  
-  
     {
         category: 'Redraw',
-        colour:'lala',
         poses: [
         {
           name:'Straight Line right',
           image:'poses/moverightrepeat.png',
-          colour:'#148c76'
+          id:'moveLeftRepeat'
         }, {
           name:'Straight Line right',
           image:'poses/moveleftrepeat.png',
-          colour:'#148c76'
+          id:'moveRightRepeat'
         }]
     }
 ]

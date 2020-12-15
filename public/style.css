@@ -9,30 +9,27 @@ canvas {
   width: 195vh;
   height: 35vh;
   float:left;
-  background-color: rgb(255, 255, 255);
-  margin-bottom: 20px;
-  margin-top: 20px;
+}
+#background {
+  height: 100vh;
+  background-color: rgb(24, 24, 24);
 }
 .posecategory {
   display: inline-block;
   height: 100%;
-  margin-right: 5px;
-  font-family: 'Bungee', cursive;
-  font-size: 16px;
-  font-weight: bold;
+  margin-right: 0px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  font-weight: bolder;
 }
 .justinline {
   display: inline-block;
   height: 100%;
-  margin-top: -15px;
 }
-.pose {
- display: inline-block;
+.pose { display: inline-block;
  width: 19vh;
  height:100%;
  margin-left: 0px;
- margin-top: 20px;
- margin-bottom:20px;
 }
 .image {
   height: 100%;
@@ -44,6 +41,6 @@ canvas {
 }
 .videoelement {
   display: inline-block;
-  margin-top: 5px;
+  margin-top: 0px;
   margin-left: 35px;
 }
