@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
     console.log(`listening http://localhost:${PORT}`);
 });  
-const socketServer = new WebSocket.Server({port: 3000});
+const socketServer = new WebSocket.Server({port: 3030});
 socketServer.on('connection', (socketClient) => {
   //console.log('connected');
   //console.log('client Set length: ', socketServer.clients.size);
