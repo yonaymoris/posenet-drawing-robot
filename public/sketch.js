@@ -13,18 +13,19 @@ let skeleton;
 let brain;
 let poseLabel = "";
 let use = true;
+var HOST = location.origin.replace(/^http/, 'ws')
 const ws = new WebSocket('ws://localhost:3030');
 ws.onopen = () => { 
-  console.log('Now connected'); 
+  console.log('Now connected',HOST); 
 };
 ws.onmessage = function(event) {
   if(event.data == 'IN_USE') {
     use = false;
-    window.alert('Hey! You are in waiting. Looks like there is a person just finishing off their drawing. You can enjoy the live stream meanwhile');
+    window.alert('Hey! You are waiting. Looks like there is a person just finishing off their drawing. You can enjoy the live stream meanwhile');
   }
   if(event.data == 'WAITING_CLEARED') {
     use = true;
-    window.alert('Ready to use');
+    window.alert('Ready to use !!!');
   }
 }
 var el;
@@ -104,13 +105,6 @@ function draw() {
   scale(-1, 1); 
   let currPose = posestyle[poseLabel]
   if(currPose && use) {
-    /*let currPose = document.getElementById(poseLabel);
-    console.log('CURR POSE',currPose,poseMapping[poseLabel])
-    if(currPose) {
-      currPose.style.borderStyle = 'solid';
-    }*/
-    //image(video, 0, 0);
-    //tint(0, 153, 204);
     tint(Number(currPose.r), Number(currPose.g), Number(currPose.b));
     image(video, 0, 0, video.width, video.height);
     //image(video, 50, 0);
@@ -181,7 +175,7 @@ function createframe(src) {
   let node = document.createElement('div');
   node.className = 'videoelement';
   var iframe = document.createElement('iframe');
-  iframe.src = 'https://www.youtube.com/embed/XYZ123?autoplay=1';
+  iframe.src = 'https://studio.youtube.com/video/JmLau5ypsl8/livestreaming';
   iframe.width = window.screen.width/2;
   iframe.height = window.screen.width/3;
   iframe.allow = 'autoplay'

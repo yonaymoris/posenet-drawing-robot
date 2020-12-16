@@ -13,27 +13,27 @@ var posestyle = {
     },
     'drawLongLeft' : {
         id:5, 
-        r: 253,
-        g: 13,
-        b: 0
+        r: 6,
+        g: 41,
+        b: 255
     },
     'drawLongRight' : {
         id:4,
+        r: 6,
+        g: 41,
+        b: 255
+    },
+    'drawShortRight' : {
+        id:6,
         r: 253,
         g: 13,
         b: 0
     },
-    'drawShortRight' : {
-        id:6,
-        r: 6,
-        g: 41,
-        b: 255
-    },
     'drawShortLeft' : {
         id:7,
-        r: 6,
-        g: 41,
-        b: 255
+        r: 253,
+        g: 13,
+        b: 0
     },
     'drawBothLeft' : {
         id:8,

@@ -6,9 +6,9 @@ canvas {
   display: block;
 }
 #posemenu {
-  width: 195vh;
+  width: 200vh;
   height: 35vh;
-  float:left;
+  margin: 0 auto;
 }
 #background {
   height: 100vh;
